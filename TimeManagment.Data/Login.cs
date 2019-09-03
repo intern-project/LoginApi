@@ -14,7 +14,7 @@ namespace TimeManagment.Data
         {
             this.connectionString = connectionString;
         }
-        public Token login(User user)
+        public Employee login(User user)
         {
             //Generating token
 
@@ -33,7 +33,7 @@ namespace TimeManagment.Data
             using (var connection = new SqlConnection(connectionString))
             {
 
-                employeesFromDB = connection.Query<Employee>("select id, email as email , password as password, role as role from Employee where email =" + email);
+                employeesFromDB = connection.Query<Employee>("select id, email as email , password as password, role as role from Employee where email ='" + email+"'");
 
             }
             //get the first instance of collection
@@ -47,13 +47,12 @@ namespace TimeManagment.Data
             //checking existance of employee
             if (userEmailFromDB!= null)
             {
-                return token;
+                return EmployeeFromDB;
             }
             else
             {
-                token.token = "kkk";
-                token.role = EmployeeFromDB.role;
-                return token;
+
+                return null;
 
             }
 

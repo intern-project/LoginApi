@@ -20,7 +20,7 @@ namespace TimeManagment.Data
 
             using (var connection = new SqlConnection(connectionString))
             {
-                employee = connection.Query<Employee>("select id, email as email , password as password, role as role from Employee where email="+"nimesh@gmail.com");
+                employee = connection.Query<Employee>("select id, email as email , password as password, role as role from Employee where email='"+"chamin@gmail.com"+"'");
             }
 
             return employee;

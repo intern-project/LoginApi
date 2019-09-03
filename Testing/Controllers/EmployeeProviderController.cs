@@ -13,25 +13,29 @@ namespace TimeManagment.Controllers
     public class EmployeeProviderController : ControllerBase
     {
         private readonly IEmployeeProvider employeeProvider;
-        public EmployeeProviderController(IEmployeeProvider employeeProvider)
+        private readonly Ilogin login;
+        public EmployeeProviderController(IEmployeeProvider employeeProvider,Ilogin login)
         {
             this.employeeProvider = employeeProvider;
+            this.login = login;
         }
         // GET: api/EmployeeProvider
         [HttpGet]
         public IEnumerable<Employee> Get()
         {
             return employeeProvider.get();
-        }
+        } 
 
         // GET: api/EmployeeProvider/5
       
 
         // POST: api/EmployeeProvider
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Employee Post([FromBody] User user)
         {
+            return login.login(user);
         }
+    
 
         // PUT: api/EmployeeProvider/5
         [HttpPut("{id}")]

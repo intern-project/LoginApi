@@ -4,8 +4,8 @@ using System.Text;
 
 namespace TimeManagment.Data
 {
-    interface Ilogin
+    public interface Ilogin
     {
-        Token login(User user);
+        Employee login(User user);
     }
 }
