@@ -13,7 +13,7 @@ namespace Testing.Controllers
     {
         // GET api/values
         [HttpGet]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "officer")]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };

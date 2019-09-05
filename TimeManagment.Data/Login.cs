@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace TimeManagment.Data
 {
@@ -14,7 +15,7 @@ namespace TimeManagment.Data
         {
             this.connectionString = connectionString;
         }
-        public Employee login(User user)
+        public async Task<Employee> login(User user)
         {
             //Generating token
 

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace TimeManagment.Data
 {
     public interface Ilogin
     {
-        Employee login(User user);
+           Task<Employee> login(User user);
     }
 }
